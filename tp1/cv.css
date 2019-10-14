@@ -8,6 +8,8 @@ td,th{
 }
 h1{
     text-align: center;
+    
+    background-color:#D3D3D3;
   
 }
 tr:hover{
@@ -15,6 +17,10 @@ tr:hover{
    border-bottom: 3px solid #760001;
    background-color:#D3D3D3;
 }
+div{
+background: burlywood;
+}
+
 
 
 
