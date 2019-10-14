@@ -1,12 +1,21 @@
 table{
-    border-collapse:collapse;
+    
+    border-style: double;
 }
 td,th{
     border:1px solid black;
+    border-style: double;
 }
 h1{
     text-align: center;
+  
 }
+tr:hover{
+    color: rgb(153,25,0);
+   border-bottom: 3px solid #760001;
+   background-color:#D3D3D3;
+}
+
 
 
 
