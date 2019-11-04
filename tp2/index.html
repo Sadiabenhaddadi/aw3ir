@@ -1,33 +1,80 @@
 <!doctype html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>TP2</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link rel="apple-touch-icon" href="apple-touch-icon.png">
-        <!-- Place favicon.ico in the root directory -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>TP2</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="Formulaire.css" rel="stylesheet">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <script type="text/javascript" src="formulaire.js"></script>
+    <!-- Place favicon.ico in the root directory -->
+    <style>
+        body {
+            background-color: #c2bdbd;
+            font-family: system, -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif;
+            font-size: 16px;
+            margin: 0 auto;
+            max-width: 800px;
+        }
+    </style>
 
-        <style>
-          body{
-              background-color: #e9ebee;              
-              font-family: system, -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif;
-              font-size: 16px;
-              margin: 0 auto;
-              max-width: 800px;              
-          }
-        </style>
-        
-        <!-- Code à dé-commenter si besoin de fichier CSS ou JS -->
-        <!--<link rel="stylesheet" href="style.css">-->
-        <!--<script src="js/main.js"></script>-->
-    </head>
-    <body>        
-        <h1>tp2</h1>
-        <!-- Add your site or application content here -->
-        <p>Hello world! This is HTML5 Boilerplate.</p>
-        <img src="../galilee.png" alt="Logo Galilee"/>
-    </body>
+    <!-- Code à dé-commenter si besoin de fichier CSS ou JS -->
+    <!--<link rel="stylesheet" href="style.css">-->
+    <!--<script src="js/main.js"></script>-->
+</head>
+
+<body>
+    <h1>
+        <font size="10">Saisie d'une fiche "Personne"</font>
+    </h1>
+    <div style="background-color: white;height:330px;margin-top:50px;border: 1px groove #000000 ;border-radius: 10px">
+        <form id="validation" method="get" action=""  onsubmit="validation(); return false;"><!--j mets le champs action de sorte qu il me renvoie sur la meme page return false pour m afficher le message d erreur-->
+            <p style="padding-top:10px">
+                <label for="nom">Nom</label>
+                <!--quand on clique dessous ça fera un effet-->
+                <input type="text" id="nom" name="nom" required="required" minlength="5" maxlength="20"
+                    placeholder="Entez votre nom" style="margin-inline-start:93px;width:570px;height:30px" />
+            </p>
+            <!--grace à required un message il faut rensigner ce champs sera affiché-->
+            <p>
+                <label for="prenom"> prenom</label>
+                <input type="text" id="prenom" name="prenom" required="required" minlength="5" maxlength="20"
+                    placeholder="Entrez votre prenom" style="margin-inline-start:73px;width:570px;height:30px"></input>
+            </p>
+            <p>
+                <label for="date"> Date de naissance</label>
+                <input type="date" id="date" name="date" required="required" placeholder="JJ/MM/AAAA"
+                    style="width:570px;height:30px" />
+            </p>
+            <p>
+                <label for="adress">Adresse</label>
+                <input type="text" id="adress" name="adress" required="required" minlength="5" maxlength="50"
+                    placeholder="Entez votre adresse" style="margin-inline-start:70px;width:570px;height:30px" />
+            </p>
+            <p>
+                <label for="mail">Mail</label>
+                <input type="email" id="mail" name="mail" required="required" minlength="5" maxlength="30"
+                    placeholder="Entez votre email" style="margin-inline-start:95px;width:570px;height:30px" />
+            </p>
+            <p>
+
+                <button type="submit">Submit</button><!-- je envoie au navigateure pourqu'il me verifié mon formulaire -->
+            
+                <input type="button" value="Valider" id="Valider" onclick="validation()"
+                    style="margin-inline-start:130px" />
+                    
+                    <button type="reset" style="margin-left: 100px;">reset</button><!--Pour rafrichir-->
+            </p>
+        </form>
+    </div>
+    <br>
+    <div id="error" hidden>
+    </div>
+    <div id="resultat" hidden> </div>
+
+</body>
+
 </html>
